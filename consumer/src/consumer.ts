@@ -4,7 +4,7 @@ import { Job } from "bull";
 @Processor("products")
 export class Consumer {
   @Process()
-  async nft(job: Job<unknown>) {
+  async products(job: Job<unknown>) {
     try {
       console.log(`Checking ${JSON.stringify(job.data)}`);
 

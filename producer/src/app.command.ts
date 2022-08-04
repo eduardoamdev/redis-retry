@@ -29,6 +29,10 @@ export class Producer implements CommandRunner {
         price: "50",
       },
       {
+        name: "hat",
+        price: 5,
+      },
+      {
         name: "jeans",
         price: 25,
       },
@@ -38,10 +42,10 @@ export class Producer implements CommandRunner {
   async run(): Promise<void> {
     for (let i = 0; i < this.products.length; i++) {
       try {
-        /* this.productsQueue.add(this.products[i], {
+        await this.productsQueue.add(this.products[i], {
           attempts: 5,
-          backoff: 1000,
-        }); */
+          backoff: 2000,
+        });
 
         console.log(
           `Object ${JSON.stringify(
